@@ -1,6 +1,7 @@
 const request = require('request');
 const express = require('express')
 const app = express()
+var http = require('http');
 var port = process.env.PORT || 3000;
 
 var nowDate = new Date(); 
@@ -64,4 +65,6 @@ app.get('/', function(req, res){
     res.send("Hello world!");
  });
  
- app.listen(port);
+
+
+ http.createServer(app).listen(port);
