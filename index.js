@@ -26,16 +26,16 @@ request(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?
       var vaccine = json_body[i]['vaccine']
       if(json_body[i]['vaccine']<45)
       {
-        console.log(`${i}: center name: ${name}\n date : ${date}\n available_capacity : ${available_capacity}\n vaccine name : ${vaccine}\n avilable slots : ${slots}`)
+        //console.log(`${i}: center name: ${name}\n date : ${date}\n available_capacity : ${available_capacity}\n vaccine name : ${vaccine}\n avilable slots : ${slots}`)
       }
      // console.log(`${i}: center name: ${name}\n date : ${date}\n available_capacity : ${available_capacity}\n vaccine name : ${vaccine}\n avilable slots : ${slots}`)
-    //   client.messages
-    //     .create({
-    //         body: `${i}: center name: ${name}\n date : ${date}\n available_capacity : ${available_capacity}\n vaccine name : ${vaccine}\n avilable slots : ${slots}`,
-    //         from: '+15103437363',
-    //         to: '+917792839346'
-    //     })
-    //     .then(message => console.log(message.sid));
+      client.messages
+        .create({
+            body: `${i}: center name: ${name}\n date : ${date}\n available_capacity : ${available_capacity}\n vaccine name : ${vaccine}\n avilable slots : ${slots}`,
+            from: '+15103437363',
+            to: '+917792839346'
+        })
+        .then(message => console.log(message.sid));
 
     }
 });
